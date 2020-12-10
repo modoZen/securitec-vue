@@ -1,28 +1,29 @@
-<template>
-  <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
-  </div>
+<template lang="pug">
+div
+  section.hero.is-success.is-fullheight
+    // Hero head: will stick at the top
+    appHeader
+    // Hero content: will be in the middle
+    .hero-body
+      .container
+        router-view
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
-
+import appHeader from "./components/AppHeader";
 export default {
-  name: 'App',
+  name: "App",
   components: {
-    HelloWorld
+    appHeader
   }
-}
+};
 </script>
 
 <style>
-#app {
-  font-family: Avenir, Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+#nav a.router-link-exact-active {
+  color: #42b983;
+}
+.container {
+  width: 100%;
 }
 </style>
